@@ -1,6 +1,6 @@
 # Basic RAG Implementation
 
-A **Retrieval-Augmented Generation (RAG)** application that combines vector embeddings with a large language model to answer questions based on stored documents.
+A Basic **Retrieval-Augmented Generation (RAG)** application that combines vector embeddings with a local large language model(Ollama) to answer questions based on stored documents.
 
 ## 🎯 Overview
 
@@ -17,9 +17,4 @@ Before you begin, ensure you have:
 - [Ollama](https://ollama.ai/) installed and running locally
 - TinyLLaMA model pulled in Ollama
 
-## 🚀 Step-by-Step Setup & Installation
 
-### Step 1: Clone the Repository
-```bash
-git clone https://github.com/SamarendraT/Basic_RAG_Implementation.git
-cd Basic_RAG_Implementation
