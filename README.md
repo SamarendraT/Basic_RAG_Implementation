@@ -1,20 +1,38 @@
-# Basic RAG Implementation
+# RAG with ChromaDB
 
-A Basic **Retrieval-Augmented Generation (RAG)** application that combines vector embeddings with a local large language model(Ollama) to answer questions based on stored documents.
+A simple RAG (Retrieval-Augmented Generation) implementation using ChromaDB for vector storage and Ollama for LLM responses.
 
-## Overview
+## Setup
 
-This project implements a RAG system using:
-- ***Chroma*** - Vector database for storing and retrieving document embeddings
-- ***Ollama*** - Local LLM inference engine (using TinyLLaMA)
-- ***FastAPI*** - REST API for querying and adding documents, with **UVI** as ASGI server
+```bash
+pip install PyPDF2 python-docx chromadb ollama fastapi uvicorn
+```
 
-## Prerequisites
+## Usage
 
-Before you begin, ensure you have:
-- Python 3.8 or higher
-- pip (Python package manager)
-- [Ollama](https://ollama.ai/) installed and running locally
-- TinyLLaMA model pulled in Ollama
+### 1. Add Documents
+Place your files (`.pdf`, `.docx`, `.txt`) in the `Documents/` folder.
 
+### 2. Start Server
+```bash
+uvicorn app:app --reload
+```
 
+### 3. Embed Documents
+```bash
+curl -X POST http://localhost:8000/embed
+```
+
+### 4. Query
+```bash
+curl -X POST http://localhost:8000/query -H "Content-Type: application/json" -d '{"query": "your question"}'
+```
+
+## API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/embed` | POST | Embed documents from `./Documents` |
+| `/query` | POST | Query with LLM response |
+| `/clear` | DELETE | Clear all embeddings |
+| `/stats` | GET | Get chunk count |
