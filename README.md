@@ -25,7 +25,7 @@ curl -X POST http://localhost:8000/embed
 
 ### 4. Query
 ```bash
-curl -X POST http://localhost:8000/query -H "Content-Type: application/json" -d '{"query": "your question"}'
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/query" -Method Post -ContentType "application/json" -Body '{"query": "?????..."}''
 ```
 
 ## API Endpoints
