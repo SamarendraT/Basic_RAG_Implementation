@@ -13,3 +13,4 @@ db/*/
 venv/
 .DS_Store
 *.log
+Documents/
