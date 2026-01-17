@@ -7,7 +7,10 @@ A simple RAG (Retrieval-Augmented Generation) implementation using ChromaDB for 
 ```bash
 pip install PyPDF2 python-docx chromadb ollama fastapi uvicorn
 ```
-
+Check whether Ollama running using cmd ```bash curl http://localhost:11435"``` --> Y --> ollama is running
+Here i have used tinyllama cmd ```bash ollama pull tinyllama ``` to pull the model
+Test the model using cmd ```bash ollama run tinyllama``` or any model which u have pulled from ollama model repo
+Try pulling different models with model(small or large) to compare response
 ## Usage
 
 ### 1. Add Documents
